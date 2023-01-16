@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;emp_dao.py&apos; to &apos;FAST_AJAX&apos;&#x0D;&#x0A;- Original project: &apos;FAST_EMP&apos;&#x0D;&#x0A;- Destination element: &apos;FAST_AJAX&apos;&#x0D;&#x0A;- Original element: &apos;emp_dao.py&apos;" description="Copy file" element1="emp_dao.py" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1665452448103" target="/FAST_AJAX" units="0" version="1.0"/>
+</session>

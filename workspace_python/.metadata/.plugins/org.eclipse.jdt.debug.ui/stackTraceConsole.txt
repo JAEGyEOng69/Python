@@ -1,0 +1,22 @@
+<form action="emp_mod_act" method="post">
+	<table border=1 style="width:100px; text-align: left;">
+      <tr>
+         <td>사원 아이디<input name="e_id" value="{{emp.e_id}}" type="text"></td>
+      </tr>
+      <tr>
+         <td>이름<input name="e_name" value="{{emp.e_name}}" type="text"></td>
+      </tr>
+      <tr>
+         <td>성별<input name="sex" value="{{emp.sex}}" type="text"></td>
+      </tr>
+      <tr>
+         <td>주소<input name="addr" value="{{emp.addr}}" type="text"></td>
+      </tr>
+      
+      <tr>
+      	<td colspan="2">
+      		<input type="submit" value="실행" />
+      	</td>
+      </tr>
+     </table>
+</form>

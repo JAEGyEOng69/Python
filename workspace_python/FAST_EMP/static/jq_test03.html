@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+input {
+	width: 60px;
+}
+</style>
+<script src="js/jquery-3.6.1.js"></script>
+<script type="text/javascript">
+	function myclick() {
+		var num1 = $("#it").val();
+		var num2 = $("#it2").val();
+		var sum =  num1 + num2;
+		$('#it3').val(sum);
+	}
+	$(document).ready(function() {
+		$("#btn_plus").bind("click", function() {
+			plus();
+		});
+		$("#btn_minus").bind("click", function() {
+			minus();
+		});
+		$("#btn_multiply").bind("click", function() {
+			multiply();
+		});
+		$("#btn_divde").bind("click", function() {
+			divde();
+		});
+	});
+	function plus() {
+		var a =$("#it1").val();
+		var b = $("#it2").val();
+		var aa = parseInt(a);
+		var bb = parseInt(b);
+		var cc = aa+bb
+		$("#it3").val(cc);
+	}
+	function minus() {
+		var a =$("#it1").val();
+		var b = $("#it2").val();
+		var aa = parseInt(a);
+		var bb = parseInt(b);
+		var cc = aa+bb
+		$("#it3").val(cc);
+	}
+	function multiply() {
+		var a =$("#it1").val();
+		var b = $("#it2").val();
+		var aa = parseInt(a);
+		var bb = parseInt(b);
+		var cc = aa+bb
+		$("#it3").val(cc);
+	}
+	function divde() {
+		var a =$("#it1").val();
+		var b = $("#it2").val();
+		var aa = parseInt(a);
+		var bb = parseInt(b);
+		var cc = aa+bb
+		$("#it3").val(cc);
+	}
+</script>
+</head>
+<body>
+	<table border="1px">
+		<tr>
+			<td><input type="text" class="myit" id="it1" /></td>
+			<td><input type="button" id="btn_plus"value="plus" /> <input
+				type="button" value="minus" id="btn_minus" /> <input
+				type="button" value="multiply" id="btn_multiply" /> <input
+				type="button" value="divde" id="btn_divde" /></td>
+			<td><input type="text" id="it2" /></td>
+
+			<td>=</td>
+
+			<td><input tpye="text" id="it3" /></td>
+		</tr>
+	</table>
+</body>
+</html>

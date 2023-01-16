@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.myit{
+		width: 70px;
+	}
+</style>
+<script src="js/jquery-3.6.1.js"></script>
+<script type="text/javascript">
+	function myclick(){
+			var obMine= $('#it_mine').val();
+			var obCom= "";
+			var obResult= "";
+			
+		var rnd = Math.floor(Math.random() *10);
+		if(rnd >5){
+			$("#it_com").val("홀");
+		}else{
+			$("#it_com").val("짝");
+		}
+		if( $('#it_mine').val()==  $('#it_com').val()){
+			$("#it_result").val("승리");
+		}else{
+			$("#it_result").val("패배");
+		}
+	}
+	
+	$(document).ready(function(){
+		  $("#btn").bind("click", function(){
+	          myclick();
+	      });
+	});
+</script>
+</head>
+<body>
+<table border="1px">
+	<tr>
+		<td>나:</td>
+		<td>
+			<input type="text" class="myit" id="it_mine">
+		</td>
+	</tr>
+	<tr>
+		<td>컴:</td>
+		<td>
+			<input type="text" class="myit" id="it_com" >
+		</td>
+	</tr>
+	<tr>
+		<td>결과:</td>
+		<td>
+			<input type="text" class="myit" id="it_result" >
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<input type="button" class="myit" value="게임하기" id="btn">
+		</td>
+	</tr>
+</table>
+</body>
+</html>

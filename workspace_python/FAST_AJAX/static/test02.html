@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function fn_click(){
+		var obj = document.querySelector("#it");
+		num = obj.value;
+		var aa= parseInt(num);
+		aa+=3;
+		obj.value=aa;
+		
+		 
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="it" value="200">
+	<input type="button" value="plus3" onclick="fn_click()" />
+
+
+</body>
+</html>

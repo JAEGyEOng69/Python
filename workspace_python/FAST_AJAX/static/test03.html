@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	 input{
+		width: 60px;
+	}
+</style>
+<script type="text/javascript">
+	function plus(){
+		 var obj1 =document.querySelector("#it1");
+		 var obj2 =document.querySelector("#it2");
+		 var obj3 =document.querySelector("#it3");
+		 var a=obj1.value;
+		 var b=obj2.value;
+		 var aa= parseInt(a);
+		 var bb= parseInt(b);
+		 obj3.value= aa + bb;
+	}
+	function minus(){
+		 var obj1 =document.querySelector("#it1");
+		 var obj2 =document.querySelector("#it2");
+		 var obj3 =document.querySelector("#it3");
+		 var a=obj1.value;
+		 var b=obj2.value;
+		 var aa= parseInt(a);
+		 var bb= parseInt(b);
+		 obj3.value= aa - bb;
+	}
+	function multiply(){
+		 var obj1 =document.querySelector("#it1");
+		 var obj2 =document.querySelector("#it2");
+		 var obj3 =document.querySelector("#it3");
+		 var a=obj1.value;
+		 var b=obj2.value;
+		 var aa= parseInt(a);
+		 var bb= parseInt(b);
+		 obj3.value= aa * bb;
+	}
+	function divde(){
+		 var obj1 =document.querySelector("#it1");
+		 var obj2 =document.querySelector("#it2");
+		 var obj3 =document.querySelector("#it3");
+		 var a=obj1.value;
+		 var b=obj2.value;
+		 var aa= parseInt(a);
+		 var bb= parseInt(b);
+		 obj3.value= aa % bb;
+	}
+</script>
+</head>
+<body>
+<table border="1px">
+<tr>
+	<td>
+		<input type="text" class="myit" id="it1"/>
+	</td>
+	<td>
+		<input  type="button"  value="plus" onclick="plus()"/>
+		<input  type="button"  value="minus" onclick="minus()"/>
+		<input  type="button"  value="multiply" onclick="multiply()"/>
+		<input  type="button"  value="divde" onclick="divde()"/>
+		
+	</td>
+	<td>
+		<input type="text" id="it2" />
+	</td>
+	
+	<td>
+		=
+	</td>
+	
+	<td>
+		<input tpye="text" id="it3" />
+	</td>
+</tr>
+</table>
+</body>
+</html>

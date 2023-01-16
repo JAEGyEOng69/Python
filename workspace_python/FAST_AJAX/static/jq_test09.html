@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.1.js"></script>
+<style>
+#it {
+   width: 100px;
+   text-align: right;
+}
+table {
+   text-align: center;
+}
+</style>
+<script type="text/javascript">
+   function mycall() {
+      var str_tel =$("#it").val();
+      alert("calling\n" + str_tel);
+   }
+
+   function myclick(e) {
+      var obj = e.target;
+      var str_new = $(obj).val();
+      var str_old = $("#it").val();
+      
+      $("#it").val(str_old + str_new);
+   }
+   
+   $(document).ready(function() {
+       $("#btn1").bind("click", function(event) {myclick(event);});
+       $("#btn2").bind("click", function(event) {myclick(event);});
+       $("#btn3").bind("click", function(event) {myclick(event);});
+       $("#btn4").bind("click", function(event) {myclick(event);});
+       $("#btn5").bind("click", function(event) {myclick(event);});
+       
+       $("#btn6").bind("click", function(event) {myclick(event);});
+       $("#btn7").bind("click", function(event) {myclick(event);});
+       $("#btn8").bind("click", function(event) {myclick(event);});
+       $("#btn9").bind("click", function(event) {myclick(event);});
+       $("#btn0").bind("click", function(event) {myclick(event);});
+
+       $("#btn_call").bind("click", function() {mycall();});
+   });
+   
+</script>
+</head>
+<body>
+<table border="1px">
+   <tr>
+      <td colspan="3">
+         <input type="text" id="it" />
+      </td>
+   </tr>
+   <tr>
+      <td><input type="button" id="btn1" value="1" /></td>
+      <td><input type="button" id="btn2" value="2" /></td>
+      <td><input type="button" id="btn3" value="3" /></td>
+   </tr>                                 
+   <tr>                                  
+      <td><input type="button" id="btn4" value="4" /></td>
+      <td><input type="button" id="btn5" value="5" /></td>
+      <td><input type="button" id="btn6" value="6" /></td>
+   </tr>                                 
+   <tr>                                   
+      <td><input type="button" id="btn7" value="7" /></td>
+      <td><input type="button" id="btn8" value="8" /></td>
+      <td><input type="button" id="btn9" value="9" /></td>
+   </tr>
+   <tr>
+      <td><input type="button" id="btn0" value="0" /></td>
+      <td colspan="2">
+         <input type="button" id="btn_call" value="CALL" />
+      </td>
+   </tr>
+</table>
+</body>
+</html>

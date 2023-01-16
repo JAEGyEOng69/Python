@@ -1,0 +1,13 @@
+a = 30;
+
+result = 0;
+
+for i in range(1,3):
+
+    a=a-10
+    print(a)
+
+
+print(a)
+    
+

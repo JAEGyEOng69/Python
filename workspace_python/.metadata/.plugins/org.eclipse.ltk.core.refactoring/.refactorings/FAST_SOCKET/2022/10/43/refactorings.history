@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;FAST_SOCKET/templates/chat.html&apos; to &apos;socket.html&apos;" description="Rename resource &apos;chat.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="templates/chat.html" name="socket.html" stamp="1666063528728" updateReferences="true"/>
+</session>

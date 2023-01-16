@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+   <p>{{str}}</p>
+   <p>{{arr}}</p>
+   <p>
+      {% for i in arr %}
+      {{i}}
+      {% endfor %}
+   </p>
+   <p>   
+      <table border=1 style="width:200px; text-align: center">
+         <tr>
+            <th>e_id</th>
+            <th>e_name</th>
+            <th>sex</th>
+            <th>addr</th>
+         </tr>
+         <tr>
+            <td>{{emps[0]["e_id"]}}</td>
+            <td>{{emps[0]["e_name"]}}</td>
+            <td>{{emps[0]["sex"]}}</td>
+            <td>{{emps[0]["addr"]}}</td>
+         </tr>
+         <tr>
+            <td>{{emps[1]["e_id"]}}</td>
+            <td>{{emps[1]["e_name"]}}</td>
+            <td>{{emps[1]["sex"]}}</td>
+            <td>{{emps[1]["addr"]}}</td>
+         </tr>
+         <tr>
+            <td>{{emps[2]["e_id"]}}</td>
+            <td>{{emps[2]["e_name"]}}</td>
+            <td>{{emps[2]["sex"]}}</td>
+            <td>{{emps[2]["addr"]}}</td>
+         </tr>
+      </table>
+   </p>
+   
+   <p>   
+      <table border=1 style="width:200px; text-align: center">
+         <tr>
+            <th>e_id</th>
+            <th>e_name</th>
+            <th>sex</th>
+            <th>addr</th>
+         </tr>
+      {% for emp in emps %}
+         <tr>
+            <td>{{emp.e_id}}</td>
+            <td>{{emp.e_name}}</td>
+            <td>{{emp.sex}}</td>
+            <td>{{emp.addr}}</td>
+         </tr>
+      {% endfor %}
+      </table>
+	</p>
+
+   <p>{{rows}}</p> 
+   <p>
+      <table border=1 style="width:200px; text-align: center">
+         <tr>
+            <th>e_id</th>
+            <th>e_name</th>
+            <th>sex</th>
+            <th>addr</th>
+         </tr>
+         <tr>
+            <td>{{rows[0]["e_id"]}}</td>
+            <td>{{rows[0]["e_name"]}}</td>
+            <td>{{rows[0]["sex"]}}</td>
+            <td>{{rows[0]["addr"]}}</td>
+         </tr>
+         <tr>
+            <td>{{rows[1]["e_id"]}}</td>
+            <td>{{rows[1]["e_name"]}}</td>
+            <td>{{rows[1]["sex"]}}</td>
+            <td>{{rows[1]["addr"]}}</td>
+         </tr>
+         <tr>
+            <td>{{rows[2]["e_id"]}}</td>
+            <td>{{rows[2]["e_name"]}}</td>
+            <td>{{rows[2]["sex"]}}</td>
+            <td>{{rows[2]["addr"]}}</td>
+         </tr>
+         <tr>
+            <td>{{rows[3]["e_id"]}}</td>
+            <td>{{rows[3]["e_name"]}}</td>
+            <td>{{rows[3]["sex"]}}</td>
+            <td>{{rows[3]["addr"]}}</td>
+         </tr>
+      </table>
+   </p>
+   <p>
+      <table border=1 style="width:200px; text-align: center">
+         <tr>
+            <th>e_id</th>
+            <th>e_name</th>
+            <th>sex</th>
+            <th>addr</th>
+         </tr>
+      {% for row in rows %}
+         <tr>
+            <td>{{row.e_id}}</td>
+            <td>{{row.e_name}}</td>
+            <td>{{row.sex}}</td>
+            <td>{{row.addr}}</td>
+         </tr>
+      {% endfor %}
+      </table>
+</body>
+</html>

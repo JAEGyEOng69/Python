@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/static/js/jquery-3.6.1.js"></script>
+</head>
+<script type="text/javascript">
+	$(document).ready(function() {
+		fn_list();
+	})
+	function fn_list(){
+		$.ajax({
+            url: "member_selects",
+            type: "get",
+            dataType: "json",
+            contentType: "application/json",
+            success: function(data) {
+                var mems= data;
+                
+                var txt="";
+                
+                for(var i=0; i<mems.length; i++){
+                	var mem = mems[i];
+                	txt += `
+                		<tr>
+    						<td><a href="javascript:fn_one('${mem.m_seq}')">${mem.m_seq}</a></td>
+    						<td>${mem.m_name}</td>
+    						<td>${mem.tel}</td>
+    						<td>${mem.army_yn}</td>
+	    				</tr>
+	    			`;
+                }
+                $("#mytbody").html(txt);
+            },
+        });
+	}
+	
+	function fn_one(m_seq){
+		var params =JSON.stringify({
+				'm_seq':m_seq
+		});
+			$.ajax({
+            	url: "member_select",
+            	type: "post",
+            	dataType: "json",
+            	data:params,
+            	contentType: "application/json",
+            	success: function(data) {
+            		var mem= data;
+            		console.log(mem);
+					$("#m_seq").val(mem.m_seq);
+					$("#m_name").val(mem.m_name);
+					$("#tel").val(mem.tel);
+					$("#army_yn").val(mem.army_yn);
+            	}
+			});
+		}
+	function fn_insert(){
+		var params =JSON.stringify({
+				'm_name':$("#m_name").val(),
+				'tel':$("#tel").val(),
+				'army_yn':$("#army_yn").val()
+		});
+			$.ajax({
+            	url: "member_insert",
+            	type: "post",
+            	dataType: "json",
+            	data:params,
+            	contentType: "application/json",
+            	success: function(data) {
+					console.log(data)
+					var cnt = data;
+					if(cnt==1){
+						alert("성공");
+						fn_list();
+						$("#m_name").val("");
+						$("#tel").val("");
+						$("#army_yn").val("");
+						
+					}else{
+						alert("추가 기능 문제 발생했습니다.");
+					}
+            	}
+			});
+		}
+	function fn_update(){
+		var params =JSON.stringify({
+				'm_seq':$("#m_seq").val(),
+				'm_name':$("#m_name").val(),
+				'tel':$("#tel").val(),
+				'army_yn':$("#army_yn").val()
+		});
+			$.ajax({
+            	url: "member_update",
+            	type: "post",
+            	dataType: "json",
+            	data:params,
+            	contentType: "application/json",
+            	success: function(data) {
+					console.log(data)
+					
+					var mem = data;
+					
+					
+						fn_list();
+						$("#m_seq").val(mem.m_seq);
+						$("#m_name").val(mem.m_name);
+						$("#tel").val(mem.tel);
+						$("#army_yn").val(mem.army_yn);
+						
+					
+            	}
+			});
+		}
+	function fn_delete(){
+		var params =JSON.stringify({
+			'm_seq':$("#m_seq").val(),
+			
+		});
+			$.ajax({
+            	url: "member_delete",
+            	type: "post",
+            	dataType: "json",
+            	data:params,
+            	contentType: "application/json",
+            	success: function(data) {
+					console.log(data)
+					var cnt = data;
+					if(cnt==1){
+						alert("성공");
+						fn_list();
+						$("#m_seq").val("");
+						$("#m_name").val("");
+						$("#tel").val("");
+						$("#army_yn").val("");
+						
+					}else{
+						alert("삭제 기능 문제 발생했습니다.");
+					}
+            	}
+			});
+		}
+</script>
+<body>
+	<table border="1px">
+		<thead>
+			<tr>
+				<td>번호</td>
+				<td>이름</td>
+				<td>전화번호</td>
+				<td>army</td>
+			</tr>
+		</thead>
+		<tbody id="mytbody">
+			<tr>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+			</tr>
+		</tbody>
+
+	</table>
+
+	<table border="1px">
+		<tr>
+			<td>번호</td>
+			<td><input type="text" id="m_seq"></td>
+		</tr>
+		<tr>
+			<td>이름</td>
+			<td><input type="text" id="m_name"></td>
+		</tr>
+		<tr>
+			<td>전화번호</td>
+			<td><input type="text" id="tel"></td>
+		</tr>
+		<tr>
+			<td>army</td>
+			<td><input type="text" id="army_yn"></td>
+		</tr>
+		<tr>
+			<td colspan="2" class="button1">
+			<input class="button1"type="button" value="추가" onclick="fn_insert()"/> 
+			<input class="button2" type="button"value="수정" onclick="fn_update()"/> 
+			<input class="button3" type="button" value="삭제" onclick="fn_delete()" />
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

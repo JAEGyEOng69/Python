@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>EMP_LIST</h3>
+<form action="emp_add">
+	<table border=1 style="width:500px;height:180px;  text-align: center">
+      <tr style="background-color:pink; font-family:cursive;">
+          <th>사원 아이디</th>
+          <th>이름</th>
+          <th>성별</th>
+          <th>주소</th>
+      </tr>
+     {% for emp in emps %}
+      <tr>
+         <td><a href="emp_detail?e_id={{emp.e_id}}">{{emp.e_id}}</a></td>
+         <td>{{emp.e_name}}</td>
+         <td>{{emp.sex}}</td>
+         <td>{{emp.addr}}</td>
+      </tr>
+      {% endfor %}
+     </table>
+     <td>
+	     <input type="submit" value="추가" >
+     </td>
+</form>
+</body>
+</html>
+
+<!-- uvicorn main:app --reload  -->

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;FAST_ZZANG/static/canvas2.]html&apos; to &apos;canvas2.html&apos;" description="Rename resource &apos;canvas2.]html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="static/canvas2.]html" name="canvas2.html" stamp="1666055097857" updateReferences="true"/>
+</session>

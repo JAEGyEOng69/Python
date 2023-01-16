@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var cvr2D = [
+	   [1,0,1,0],
+	   [1,1,1,0],
+	   [0,0,0,1],
+	   [1,1,0,0]
+	];
+	
+	function myinit(){
+		var canvas = document.querySelector('canvas');
+		var ctx = canvas.getContext('2d');
+		for(var i=0; i<4; i++){
+			for(var j=0; j<4; j++){
+			ctx.fillStyle = 'blue';
+			ctx.fillRect(j, i, 9, 9);
+				
+			}		 	
+		}		 
+		// fillStyle property에 파란색 값을 할당
+	}
+</script>
+</head>
+<body onload="myinit()">
+
+<canvas id="mycan" width="400px" height="400">
+
+</canvas>
+
+</body>
+</html>

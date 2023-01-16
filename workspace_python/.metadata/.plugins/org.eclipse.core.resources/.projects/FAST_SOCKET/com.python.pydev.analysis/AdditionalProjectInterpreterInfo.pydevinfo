@@ -1,0 +1,31 @@
+-- VERSION_5
+-- START DISKCACHE_3
+D:\workspace_python\.metadata\.plugins\org.eclipse.core.resources\.projects\FAST_SOCKET\com.python.pydev.analysis\v2_indexcache
+mysocket|1666155260510252100|D:\workspace_python\FAST_SOCKET\mysocket.py
+-- END DISKCACHE
+-- START DICTIONARY
+4
+3=ConnectionManager
+1=D:\workspace_python\FAST_SOCKET\mysocket.py
+2=mysocket
+4=ConnectionManager.__init__
+-- END DICTIONARY
+-- START TREE 1
+7
+app|1|app!1^9#1*19@
+car|1|card!1^40#11*18@
+con|1|ConnectionManager!1^12#7*17@
+man|1|manager!1^31#1*19@
+tem|1|templates!1^33#1*19@
+web|1|websocket_endpoint!1^47#11*18@
+zza|1|zzang!1^36#11*18@
+-- END TREE
+-- START TREE 2
+6
+__i|1|__init__!3&1^13#9*18@
+act|1|active_connections!4&1^14#9*19@
+bro|1|broadcast!3&1^26#15*18@
+con|1|connect!3&1^16#15*18@
+dis|1|disconnect!3&1^20#9*18@
+sen|1|send_personal_message!3&1^23#15*18@
+-- END TREE

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function drawStar(cnt){
+		var ret = "";
+		for(var i =0;i<cnt; i++) {
+			ret += "*";
+		}
+		ret +="<br>";
+		return ret;
+	}
+	
+	function myclick(){
+		let fir = document.querySelector('input[name="rf"]:checked').value;
+		let sec = document.querySelector('input[name="rl"]:checked').value;
+		let view = document.querySelector(".mydisp");
+		
+		let aa = parseInt(fir);
+		let bb = parseInt(sec);
+		
+		var txt ="";
+		console.log(fir);
+		console.log(sec);
+		for(var i=aa; i<=bb; i++) {
+			txt +=drawStar(i);
+		}
+		 view.innerHTML=txt;
+	}
+</script>
+<style type="text/css">
+	.mydisp{
+	
+		height: 200px;
+	}
+
+</style>
+</head>
+<body>
+ <table border="1px">
+ 	<tr>
+ 	<td>시작별수</td>
+ 	<td>
+ 		<input type="radio" name="rf" value="2"/>2
+ 		<input type="radio" name="rf" value="3"/>3
+ 		<input type="radio" name="rf" value="4"/>4
+ 		<input type="radio" name="rf" value="5"/>5
+ 	</td>
+ 	</tr>
+ 	<tr>
+ 	<td>끝별수</td>
+ 	<td>
+ 		<input type="radio" name="rl" value="6"/>6
+ 		<input type="radio" name="rl" value="7"/>7
+ 		<input type="radio" name="rl" value="8"/>8
+ 		<input type="radio" name="rl" value="9"/>9
+ 	</td>
+ 	</tr>
+ 	<tr>
+ 		<td colspan="2">
+ 			<input type="button" value="별 출력하기" onclick="myclick()">
+ 		</td>
+ 	</tr>
+ 	<tr>
+ 		<td colspan="2" class="mydisp">
+ 		</td>
+ 	</tr>
+ </table>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	EMP_LIST
+	<br>
+	<table border=1 style="width:200px; text-align: center">
+      <tr>
+          <th>e_id</th>
+          <th>e_name</th>
+          <th>sex</th>
+          <th>addr</th>
+      </tr>
+      {% for row in rows %}
+      <tr>
+         <td>{{row.e_id}}</td>
+         <td>{{row.e_name}}</td>
+         <td>{{row.sex}}</td>
+         <td>{{row.addr}}</td>
+      </tr>
+      {% endfor %}
+      </table>
+</body>
+</html>

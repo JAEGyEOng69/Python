@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.1.js"></script>
+<style type="text/css">
+#it{
+	width: 30px;
+}
+
+</style>
+<script type="text/javascript">
+	var com = "123";
+	
+	function getBall(com, mine){
+		var cnt1 = 0;
+		var subcom1 = com.substr(0, 1);
+		var subcom2 = com.substr(1, 2);
+		var subcom3 = com.substr(2, 3);
+
+		var submine1 = mine.substr(0, 1);
+		var submine2 = mine.substr(1, 2);
+		var submine3 = mine.substr(2, 3);
+
+		if ((subcom1==submine2) || (subcom1==submine3))
+			cnt1++;
+		if ((subcom2==submine1) || (subcom2==submine3))
+			cnt1++;
+		if ((subcom3==submine1) || (subcom3==submine2))
+			cnt1++;
+
+		return cnt1;
+		
+	}
+	function getStrike(com, mine){
+		var cnt = 0;
+		var c1 = com.substr(0, 1);
+		var c2 = com.substr(1, 2);
+		var c3 = com.substr(2, 3);
+
+		var m1 = mine.substr(0, 1);
+		var m2 = mine.substr(1, 2);
+		var m3 = mine.substr(2, 3);
+
+		if (c1==m1)
+			cnt++;
+		if (c2==m2)
+			cnt++;
+		if (c3==m3)
+			cnt++;
+
+		return cnt;
+	}
+	function myclick(){
+		
+		var str_old =$("#ta").val();
+		var mine= $("#it").val();
+		
+		var s =getStrike(com,mine);
+		var b = getBall(com, mine);
+		var str_new = mine+" " + s+"S"+b+"B"+"\n";
+		$("#ta").val(str_old+str_new);
+		$("#it").val("");
+		if(s==3){
+			alert(mine+"을 맞췄습니다");
+		}
+	}
+	function myinit(){
+		var arr9 = [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ];
+		for (var i = 0; i < 100; i++) {
+			var rnd = parseInt(Math.random() * 9);
+			var a = arr9[0];
+			var b = arr9[rnd];
+			arr9[0] = b;
+			arr9[rnd] = a;
+		}
+		com = arr9[0]+""+arr9[1]+""+arr9[2];
+		console.log("com"+com);
+	}
+	$(document).ready(function() {
+		$("#btn").bind("click", function() {
+			myclick();
+		});
+
+		$("#it").bind("keydown", function(key) {
+			if (key.keyCode == 13) {
+				myclick();
+			}
+		});
+
+	});
+</script>
+</head>
+<body onload="myinit()">
+	<table border="1px">
+		<tr>
+			<td>스트라이크 :</td>
+			<td>
+				<input type="text" id="it">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="button" value="맞추기" id="btn">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<textarea id="ta" rows="20" cols="20"></textarea>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
